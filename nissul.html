@@ -13,6 +13,10 @@
           .withAppKey('bmlzc3VsZ2FsYXJvdXRlcjplOGNiMWRiMS0zOTg4LTRkYjctYjJmNi03ZDhmNGFkNTU2NWU=')
           .withButton({ "color": "#7c7c7c", "icon": "" })
           .withCustomCommonUrl('https://nissulgala.chat.blip.ai/')
+          .withEventHandler(BlipChat.LOAD_EVENT, function () {
+            document.getElementById('closed').click()
+            alert('oi')
+                })
           .build();
       }
     })();
@@ -149,7 +153,7 @@
   <h1>Teste Nissul</h1>
 
   <div class="message-bubble">
-    <p>Vamos calcular o Financiamento Aprovado para Você? 😀</p><span class="close-button"
+    <p>Vamos calcular o Financiamento Aprovado para Você? 😀</p><span class="close-button" id="closed"
       onclick="this.parentElement.style.display='none'"></span>
   </div>
 
