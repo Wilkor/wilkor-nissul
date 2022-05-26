@@ -30,7 +30,14 @@ new BlipChat()
   })
 .withoutHistory()
    .withEventHandler(BlipChat.LEAVE_EVENT, function () {
-              alert('leave')
+                BlipChat.sendMessage({
+                    "type": "text/plain",
+                    "content": "#teste"
+                    });
+   BlipChat.sendMessage({
+                    "type": "text/plain",
+                    "content": "oi"
+                    });
             })
             .withEventHandler(BlipChat.LOAD_EVENT, function () {
               alert('chat loaded')
