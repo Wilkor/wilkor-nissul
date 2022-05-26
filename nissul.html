@@ -29,7 +29,7 @@ new BlipChat()
 }
   })
 .withoutHistory()
-   .withEventHandler(BlipChat.LEAVE_EVENT, function () {
+   .withEventHandler(BlipChat.LEAVE_EVENT, function (BlipChat) {
                 BlipChat.sendMessage({
                     "type": "text/plain",
                     "content": "#teste"
