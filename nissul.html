@@ -31,7 +31,7 @@
           })
           .withoutHistory()
           .withEventHandler(BlipChat.LEAVE_EVENT, function () {
-            localStorage.clear();
+            window.localStorage.clear();
           })
           .withEventHandler(BlipChat.LOAD_EVENT, function () {
             alert('chat loaded')
