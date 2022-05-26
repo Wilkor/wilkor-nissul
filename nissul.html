@@ -7,19 +7,28 @@
   <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
   </script>
   <script>
-    (function () {
-      window.onload = function () {
-        new BlipChat()
-          .withAppKey('YWNlbGVyYWRvcmVtcHJlc2FyaWFscm91dGVyOjczNzUxYWRlLWY0OTAtNDNjNC04ZDYxLTExMTkxNGMyNmY1Yg==')
-          .withButton({ "color": "#7c7c7c", "icon": "https://blipmediastore.blob.core.windows.net/public-medias/Media_037acb1a-197d-4cb4-81ce-509924cbb201" })
-          .withCustomCommonUrl('https://aceleradorempreserarial.chat.blip.ai/')
-          .withEventHandler(BlipChat.LOAD_EVENT, function () {
-            document.getElementById('closed').click()
+      (function() {
+window.onload = function() {
+new BlipChat()
+.withAppKey('YWNlbGVyYWRvcmVtcHJlc2FyaWFscm91dGVyOjczNzUxYWRlLWY0OTAtNDNjNC04ZDYxLTExMTkxNGMyNmY1Yg==')
+.withButton({
+"color": "#f17f06",
+"icon": ""
+})
+.withCustomCommonUrl('https://aceleradorempreserarial.chat.blip.ai/')
+    BlipClient.withoutHistory()
+    .withAccount({
+extras: {
+nome: "Wilkor",
+email: "wilkor.almeida@gmail.com",
+telefone: "11970950034",
+qtdPessoas: "10" 
 
-                })
-          .build();
-      }
-    })();
+},
+})
+.build();
+}
+})();
   </script>
   <style type="text/css">
     .message-bubble {
@@ -153,7 +162,7 @@
   <h1>Teste Acelerador</h1>
 
   <div class="message-bubble">
-    <p>Olá!<strong>Clique aqui para falar conosco</strong>😀</p><span class="close-button" id="closed"
+    <p>Olá!<strong> Clique aqui para falar conosco</strong>😀</p><span class="close-button" id="closed"
       onclick="this.parentElement.style.display='none'"></span>
   </div>
 
