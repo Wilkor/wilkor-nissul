@@ -10,8 +10,8 @@
     (function () {
       window.onload = function () {
 
-        let blip = new BlipChat()
-          .withAppKey('YWNlbGVyYWRvcmVtcHJlc2FyaWFscm91dGVyOjczNzUxYWRlLWY0OTAtNDNjNC04ZDYxLTExMTkxNGMyNmY1Yg==')
+        let blipClient = new BlipChat();
+        blipClient.withAppKey('YWNlbGVyYWRvcmVtcHJlc2FyaWFscm91dGVyOjczNzUxYWRlLWY0OTAtNDNjNC04ZDYxLTExMTkxNGMyNmY1Yg==')
           .withButton({
             "color": "#f17f06",
             "icon": ""
@@ -30,12 +30,12 @@
             }
           })
           .withoutHistory()
-          .withEventHandler(BlipChat.LEAVE_EVENT, function (BlipChat) {
-            blip.sendMessage({
+          .withEventHandler(BlipChat.LEAVE_EVENT, function () {
+            blipClient.sendMessage({
               "type": "text/plain",
               "content": "#teste"
             });
-            blip.sendMessage({
+            blipClient.sendMessage({
               "type": "text/plain",
               "content": "oi"
             });
