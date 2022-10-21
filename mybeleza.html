@@ -4,23 +4,20 @@
   <meta charset="UTF-8">
   <title>Blip Chat Widget - Acelerador</title>
 
-  <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
-  </script>
-  <script>
+<script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+</script>
+<script>
     (function () {
-      window.onload = function () {
-        new BlipChat()
-          .withAppKey('YWNlbGVyYWRvcmVtcHJlc2FyaWFscm91dGVyOjczNzUxYWRlLWY0OTAtNDNjNC04ZDYxLTExMTkxNGMyNmY1Yg==')
-          .withButton({ "color": "#7c7c7c", "icon": "https://cdn.neurologic.com.br/neurolead/img/avatar.png" })
-          .withCustomCommonUrl('https://aceleradorempreserarial.chat.blip.ai/')
-          .withEventHandler(BlipChat.LOAD_EVENT, function () {
-            document.getElementById('closed').click()
-
-                })
-          .build();
-      }
+        window.onload = function () {
+            new BlipChat()
+            .withAppKey('ZGVwaWxhY2FvbGF6ZXJ1YWlsYXNlcjplOGQ5ZmYyOS03OWZiLTQwZGYtYWUwNy03NGNkZGU1NWU1Mjc=')
+            .withButton({"color":"#6022A6","icon":""})
+            .withCustomCommonUrl('https://mybeleza.chat.blip.ai/')
+            .build();
+        }
     })();
-  </script>
+</script>
+                                
   <style type="text/css">
     .message-bubble {
       font-family: Nunito Sans,
