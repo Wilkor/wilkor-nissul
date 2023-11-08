@@ -1,0 +1,184 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blip Chat Widget - jungheinrich</title>
+
+  <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+  </script>
+  <script>
+
+    
+    (function () {
+      window.onload = function () {
+
+        let blipClient = new BlipChat();
+        blipClient.withAppKey('anVuZ2hlaW5yaWNocm90ZWFkb3I6NzlhMTI5YTgtZWYwMS00MTljLTliOWMtYjBkYmE5NzQ5OGRj')
+          .withButton({
+            "color": "#f17f06",
+            "icon": ""
+          })
+          .withCustomCommonUrl('https://jungheinrich.chat.blip.ai/')
+          .withAccount({
+            fullName: 'Wilkor Almeida',
+            email: 'wilkor.almeida@gmail.com',
+            phoneNumber: '11970950034',
+            extras: {
+              nome: "Wilkor",
+              email: "wilkor.almeida@gmail.com",
+              telefone: "11970950034",
+              qtdPessoas: "10"
+
+            }
+          })
+          .withoutHistory()
+          .withEventHandler(BlipChat.LEAVE_EVENT, function () {
+            window.localStorage.clear();
+          })
+          .withEventHandler(BlipChat.LOAD_EVENT, function () {
+            window.localStorage.clear();
+          })
+          .build();
+
+      }
+    })();
+  </script>
+  <style type="text/css">
+    .message-bubble {
+      font-family: Nunito Sans,
+        sans-serif;
+      display: flex;
+      flex-flow: row wrap;
+      position: fixed;
+      background: #fff;
+      color: #909ba9;
+      right: calc(100px + 2%);
+      max-width: 240px;
+      bottom: 60px;
+      padding: 1em 1em 12px 12px;
+      border-radius: 13px 13px 2px 13px;
+      box-shadow: 1px -1px 9px rgba(0, 0, 0, .75);
+      z-index: 980;
+      animation: toggle-bubble .5s ease-out;
+      margin-left: 15px;
+      line-height: 1.5em;
+      transform-origin: 100% 100%
+    }
+
+    .message-bubble::after {
+      bottom: 0;
+      content: '';
+      position: absolute;
+      left: calc(100% - 15px);
+      width: 0;
+      border: 14px solid transparent;
+      border-bottom-color: #fff;
+      border-radius: 4.5px
+    }
+
+    .message-bubble::before {
+      bottom: 0;
+      content: '';
+      position: absolute;
+      left: calc(100% - 12px);
+      width: 0;
+      border: 15px solid transparent;
+      border-bottom-color: rgba(0, 0, 0, .25);
+      filter: blur(2px);
+      border-radius: 4.5px
+    }
+
+    .message-bubble p {
+      margin: 0
+    }
+
+    .message-bubble p+p {
+      margin-block: .4em 0
+    }
+
+    .message-bubble .close-button {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      width: .7em;
+      height: .7em;
+      opacity: .3
+    }
+
+    .message-bubble .close-button:hover {
+      opacity: 1;
+      cursor: pointer
+    }
+
+    .message-bubble .close-button:before,
+    .message-bubble .close-button:after {
+      position: absolute;
+      content: ' ';
+      height: .7999999999999999em;
+      width: 2px;
+      background-color: #333
+    }
+
+    .message-bubble .close-button:before {
+      transform: rotate(45deg)
+    }
+
+    .message-bubble .close-button:after {
+      transform: rotate(-45deg)
+    }
+
+    @-moz-keyframes toggle-bubble {
+      from {
+        transform: scale(.1)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    @-webkit-keyframes toggle-bubble {
+      from {
+        transform: scale(.1)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    @-o-keyframes toggle-bubble {
+      from {
+        transform: scale(.1)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    @keyframes toggle-bubble {
+      from {
+        transform: scale(.1)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Teste Acelerador</h1>
+
+  <div class="message-bubble">
+    <p>Olá!<strong> Clique aqui para falar conosco</strong>😀</p><span class="close-button" id="closed"
+      onclick="this.parentElement.style.display='none'"></span>
+  </div>
+
+</body>
+
+</html>
