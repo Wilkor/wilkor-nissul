@@ -18,14 +18,15 @@ window.setTimeout(function() {
 
 document.getElementById('blip-chat-open-iframe').click() 
    var closeIcon = document.getElementById('close-icon');
+}, 500); 
 
-  // Verifique se o elemento existe antes de tentar removê-lo
+  window.setTimeout(function() { 
+   var closeIcon = document.getElementById('close-icon');
+    
   if (closeIcon) {
-    // Remova o elemento
     closeIcon.parentNode.removeChild(closeIcon);
   }
 
-}, 500); 
-
+}, 1000); 
 </script>
             
