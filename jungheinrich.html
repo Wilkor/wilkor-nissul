@@ -9,48 +9,17 @@
                 .withAppKey('anVuZ2hlaW5yaWNocm90ZWFkb3I6NzlhMTI5YTgtZWYwMS00MTljLTliOWMtYjBkYmE5NzQ5OGRj')
                 .withButton({"color":"#FFB900","icon":""})
                 .withCustomCommonUrl('https://jungheinrich.chat.blip.ai/')
-                .withCustomStyle(`
-            body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    #app {
-        height: 100%;
-    }
-
-    .blip-container {
-        height: 100%;
-    }
-
-    #blip-chat-welcome-container,
-    #blip-chat-header {
-        display: none;
-    }
-
-    #message-input {
-        box-sizing: border-box;
-        border: 1px solid #0CC8CC;
-        border-radius: 0;
-        background: #252B39;
-        height: 100%;
-    }
-
-    #message-input textarea {
-        background: #252B39;
-        font-size: 12px;
-        color: white;
-        height: 100%;
-    }
-
-    #message-input .message-options {
-        display: none;
-    }
-          `)
                 .build();
         }
-    })();
+    }
+    
+    window.setTimeout(function() { blipClient.toogleChat() }, 500); 
+
+			const blipChatButton = document.getElementById('blip-chat-open-iframe')
+
+			blipChatButton.classList.remove('opened')
+        
+  
+  )();
 </script>
             
