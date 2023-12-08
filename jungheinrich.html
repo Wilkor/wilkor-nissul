@@ -1,7 +1,15 @@
 <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
 <script>
 
-     const customStyle = `
+  
+         
+    (function () {
+        window.onload = function () {
+            new BlipChat()
+                .withAppKey('anVuZ2hlaW5yaWNocm90ZWFkb3I6NzlhMTI5YTgtZWYwMS00MTljLTliOWMtYjBkYmE5NzQ5OGRj')
+                .withButton({"color":"#FFB900","icon":""})
+                .withCustomCommonUrl('https://jungheinrich.chat.blip.ai/')
+                .withCustomStyle(`
             body {
               background: transparent;
             }
@@ -39,15 +47,7 @@
             #message-input .message-options {
               display: none;
             }
-          `
-         
-    (function () {
-        window.onload = function () {
-            new BlipChat()
-                .withAppKey('anVuZ2hlaW5yaWNocm90ZWFkb3I6NzlhMTI5YTgtZWYwMS00MTljLTliOWMtYjBkYmE5NzQ5OGRj')
-                .withButton({"color":"#FFB900","icon":""})
-                .withCustomCommonUrl('https://jungheinrich.chat.blip.ai/')
-                .withCustomStyle(customStyle)
+          `)
                 .build();
         }
     })();
