@@ -14,7 +14,18 @@
     })();
 
   
-window.setTimeout(function() { document.getElementById('blip-chat-open-iframe').click() }, 500); 
+window.setTimeout(function() { 
+
+document.getElementById('blip-chat-open-iframe').click() 
+   var closeIcon = document.getElementById('close-icon');
+
+  // Verifique se o elemento existe antes de tentar removê-lo
+  if (closeIcon) {
+    // Remova o elemento
+    closeIcon.parentNode.removeChild(closeIcon);
+  }
+
+}, 500); 
 
 </script>
             
